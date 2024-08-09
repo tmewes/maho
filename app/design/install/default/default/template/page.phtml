@@ -21,85 +21,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?= Mage::helper('install')->__('OpenMage Installation Wizard') ?></title>
-<link rel="icon" href="<?= $this->getSkinUrl('favicon.ico') ?>" type="image/x-icon" />
-<script type="text/javascript" src="<?= $this->getJsUrl() ?>prototype/prototype.js"></script>
-<script type="text/javascript" src="<?= $this->getJsUrl() ?>prototype/validation.js"></script>
-<script type="text/javascript" src="<?= $this->getJsUrl() ?>scriptaculous/effects.js"></script>
-<script type="text/javascript" src="<?= $this->getJsUrl() ?>mage/translate.js" ></script>
-<script type="text/javascript" src="<?= $this->getJsUrl() ?>varien/js.js"></script>
-<script type="text/javascript" src="<?= $this->getJsUrl() ?>varien/form.js"></script>
-<link rel="stylesheet" href="<?= $this->getSkinUrl('css/reset.css') ?>" type="text/css" media="all" />
-<link rel="stylesheet" href="<?= $this->getSkinUrl('css/boxes.css') ?>" type="text/css" media="all" />
-<link rel="stylesheet" href="<?= $this->getSkinUrl('css/clears.css') ?>" type="text/css" media="all" />
-
-<?= $this->helper('core/js')->getTranslatorScript() ?>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><?= Mage::helper('install')->__('Maho Installation Wizard') ?></title>
+    <link rel="icon" href="<?= $this->getSkinUrl('images/favicon.svg') ?>" type="image/x-icon"/>
+    <script type="text/javascript" src="<?= $jsUrl = $this->getJsUrl() ?>prototype/prototype.js"></script>
+    <script type="text/javascript" src="<?= $jsUrl ?>prototype/validation.js"></script>
+    <script type="text/javascript" src="<?= $jsUrl ?>scriptaculous/effects.js"></script>
+    <script type="text/javascript" src="<?= $jsUrl ?>mage/translate.js"></script>
+    <script type="text/javascript" src="<?= $jsUrl ?>varien/js.js"></script>
+    <script type="text/javascript" src="<?= $jsUrl ?>varien/form.js"></script>
+    <link rel="stylesheet" href="<?= $this->getSkinUrl('css/reset.css') ?>" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $this->getSkinUrl('css/boxes.css') ?>" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $this->getSkinUrl('css/clears.css') ?>" type="text/css" media="all"/>
+    <?= $this->helper('core/js')->getTranslatorScript() ?>
 </head>
-
 <body>
-<!-- [start] header -->
-    <div class="header">
-        <div class="header-top-container">
-            <div class="header-top">
-                <h1 id="logo">
-                    <a href="<?= $this->getUrl('') ?>"><img src="<?= $this->getSkinUrl('images/logo.svg') ?>" title="<?= Mage::helper('core')->quoteEscape(Mage::helper('install')->__('OpenMage')) ?>" alt="<?= Mage::helper('core')->quoteEscape(Mage::helper('install')->__('OpenMage')) ?>" /></a>
-                </h1>
-
-                <?= $this->getChildHtml('topSearch') ?>
-
-                <div class="quick-access">
-                    <div class="account-access">
-                       <strong>&nbsp;<?= $this->getWelcome() ?></strong> <?= $this->getChildHtml('topLeftLinks') ?>
-                    </div>
-                    <div class="shop-access">
-                        <?= $this->getChildHtml('topRightLinks') ?>
-                    </div>
+<div class="header">
+    <div class="header-top-container">
+        <div class="header-top">
+            <h1 id="logo">
+                <a href="/">
+                    <img src="<?= $this->getSkinUrl('images/logo.svg') ?>"
+                         title="<?= Mage::helper('install')->__('Maho') ?>"
+                         alt="<?= Mage::helper('install')->__('Maho') ?>">
+                </a>
+            </h1>
+            <?= $this->getChildHtml('topSearch') ?>
+            <div class="quick-access">
+                <div class="account-access">
+                    <strong>&nbsp;<?= $this->getWelcome() ?></strong> <?= $this->getChildHtml('topLeftLinks') ?>
                 </div>
-
+                <div class="shop-access">
+                    <?= $this->getChildHtml('topRightLinks') ?>
+                </div>
             </div>
         </div>
-        <?= $this->getChildHtml('topMenu') ?>
     </div>
-<!-- [end] header -->
-
-        <!-- [start] middle -->
-       <?= $this->getChildHtml('store') ?>
-    <div class="middle-container">
-        <div class="middle col-2-left-layout">
-            <?= $this->getChildHtml('breadcrumbs') ?>
-
-            <!-- [start] left -->
-            <div class="col-left side-col">
-                <?= $this->getChildHtml('left') ?>
-            </div>
-            <div id="main" class="col-main">
-            <!-- [start] global messages -->
-                <?= $this->getChildHtml('global_messages') ?>
-            <!-- [end] global messages -->
-            <!-- [start] content -->
-                <?= $this->getChildHtml('content') ?>
-            <!-- [end] content -->
-            </div>
+    <?= $this->getChildHtml('topMenu') ?>
+</div>
+<?= $this->getChildHtml('store') ?>
+<div class="middle-container">
+    <div class="middle col-2-left-layout">
+        <?= $this->getChildHtml('breadcrumbs') ?>
+        <div class="col-left side-col">
+            <?= $this->getChildHtml('left') ?>
         </div>
-            <!-- [end] center -->
+        <div id="main" class="col-main">
+            <?= $this->getChildHtml('global_messages') ?>
+            <?= $this->getChildHtml('content') ?>
+        </div>
     </div>
-        <!-- [end] middle -->
-
-        <!-- [start] footer -->
-    <div class="footer-container">
-        <div class="footer">
+</div>
+<div class="footer-container">
+    <div class="footer">
         <p class="legality">
-            <?= Mage::helper('install')->__('Help Us to Keep OpenMage Healthy') ?> - <a href="https://github.com/OpenMage/magento-lts/issues" id="bug_tracking_link"><strong><?= Mage::helper('install')->__('Report All Bugs') ?></strong></a> <?= Mage::helper('install')->__('(ver. %s)', Mage::getOpenMageVersion()) ?><br/>
-<script type="text/javascript">
-//<![CDATA[
-    $('bug_tracking_link').target = "varien_external";
-//]]>
-</script>
+            <?= Mage::helper('install')->__('Help Us to Keep Maho Healthy') ?> - <a
+                    href="https://github.com/OpenMage/magento-lts/issues"
+                    id="bug_tracking_link"><strong><?= Mage::helper('install')->__('Report All Bugs') ?></strong></a> <?= Mage::helper('install')->__('(v%s)', Mage::getOpenMageVersion()) ?>
+            <br>
         </p>
-        </div>
     </div>
-        <!-- [end] footer -->
-    </body>
+</div>
+<script>
+    $('bug_tracking_link').target = "varien_external";
+</script>
+</body>
 </html>

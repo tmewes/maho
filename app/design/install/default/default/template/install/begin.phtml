@@ -20,28 +20,15 @@
  */
 ?>
 <div class="page-head">
-    <h3><?= $this->__("Welcome to OpenMage's Installation Wizard") ?>!</h3>
+    <h3><?= $this->__("Welcome to Maho's Installation Wizard") ?>!</h3>
 </div>
 <?= $this->getMessagesBlock()->toHtml() ?>
-<?php if(count($this->getMessagesBlock()->getMessages())==0): ?>
+<?php if (count($this->getMessagesBlock()->getMessages())==0): ?>
 <form action="<?= $this->getPostUrl() ?>" method="post">
 <div style="height:20em; border:1px solid #ccc; margin-bottom:8px; padding:5px; background:#fff; overflow: auto; overflow-x:hidden; overflow-y:scroll;">
 <?= $this->getLicenseHtml() ?>
 </div>
 
-<script type="text/javascript">
-//<![CDATA[
-function changeSubmitStatus(obj) {
-    $('submitButton').disabled = !obj.checked;
-    if(obj.checked){
-        $('submitButton').setStyle({'background':'#f18200','borderColor':'','cursor':'pointer','color':'#C73615'});
-    }
-    else{
-        $('submitButton').setStyle({'background':'#bbb','borderColor':'#bbb','cursor':'default','color':'white'});
-    }
-}
-//]]>
-</script>
     <p>
         <input type="checkbox" name="agree" value="1" id="agree" onclick="changeSubmitStatus(this)" class="checkbox" />
         <label for="agree"><?= $this->__('I agree to the above terms and conditions.') ?></label>
@@ -50,9 +37,17 @@ function changeSubmitStatus(obj) {
         <button class="form-button" type="submit" id="submitButton" disabled="disabled"><span><?= $this->__('Continue') ?></span></button>
     </div>
 </form>
-<script type="text/javascript">
-//<![CDATA[
+<script>
+    function changeSubmitStatus(obj) {
+        $('submitButton').disabled = !obj.checked;
+        if(obj.checked){
+            $('submitButton').setStyle({'background':'#f18200','borderColor':'','cursor':'pointer','color':'#C73615'});
+        }
+        else{
+            $('submitButton').setStyle({'background':'#bbb','borderColor':'#bbb','cursor':'default','color':'white'});
+        }
+    }
+
     changeSubmitStatus($('agree'));
-//]]>
 </script>
 <?php endif ?>

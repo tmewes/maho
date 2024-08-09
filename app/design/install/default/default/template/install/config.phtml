@@ -27,7 +27,7 @@
 <?php if($this->getInstaller()->getServerCheckStatus()): ?>
 <form action="<?= $this->getPostUrl() ?>" method="post" id="form-validate">
 
-<!--    database connection    -->
+<!-- database connection -->
 <?= $this->getLayout()->getBlock('database')->toHtml() ?>
 
 <fieldset class="group-select">
@@ -46,7 +46,7 @@
             </p>
         </li>
         <li>
-            <input type="checkbox" name="config[enable_charts]" id="enable_charts" value="1" <?php if($this->getFormData()->getEnableCharts()): ?>checked="checked"<?php endif ?> />
+            <input type="checkbox" name="config[enable_charts]" id="enable_charts" value="1" <?php if ($this->getFormData()->getEnableCharts()): ?>checked="checked"<?php endif ?> />
             <label for="enable_charts"><?= $this->__('Enable Charts') ?></label><br />
             <p style="margin-top:4px; line-height:1.3em; color:#666;">
                 <small><?= $this->__('Enable this option if you want the charts to be displayed on Dashboard.') ?></small>
@@ -117,7 +117,7 @@
     <button class="form-button" type="submit"><span><?= $this->__('Continue') ?></span></button>
 </div>
 </form>
-<script type="text/javascript">
+<script>
     var dataForm = new VarienForm('form-validate');
 </script>
 <?php else: ?>

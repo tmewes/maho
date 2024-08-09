@@ -59,12 +59,8 @@ input.radio,
 input.checkbox { margin-right:5px; }
 .qty { width:2.5em; }
 .group-select label, .form-list label, .payment-methods label { font-weight:bold;}
-.button-set { /* Container for form buttons*/
-    clear:both;
-    margin-top:4em;
-    border-top:1px solid #e4e4e4;
-    padding-top:8px;
-    text-align:right;
+.button-set {
+    text-align: right;
     }
 .form-button, .form-button-alt {
     overflow:visible;
@@ -272,14 +268,8 @@ p.required {
 .col-3-layout .col-main { width:475px; margin-left:17px; }
 
 /* Style */
-.header { border-top:5px solid #0d2131; }
-.header-top-container { border-bottom:1px solid #415966; background:url(../images/header_top_container_bg.jpg) repeat-x 50% 0; }
-.header-top { padding:10px 10px 20px; }
+.header-top { padding: 10px; }
 .header-nav-container { background:url(../images/nav_bg.jpg) repeat-y 50% 0 #0a263d; }
-.middle-container { background:url(../images/main_container_bg.gif) no-repeat 50% 0 #fbfaf6; }
-.middle { background:url(../images/main_bg.gif) no-repeat #fffffe;  padding:25px 25px 80px 25px; }
-
-
 
 /********************** Header */
 
@@ -319,7 +309,6 @@ h1#logo { float:left; width:202px; margin:3px 0 0 12px; }
 
 
 /********************** Footer */
-.footer-container { border-top:15px solid #B6D1E2; }
 .footer {
     width:930px;
     margin:0 auto;
@@ -340,13 +329,6 @@ h1#logo { float:left; width:202px; margin:3px 0 0 12px; }
 .footer .informational li.last { background:none; padding-right:0; }
 .footer .informational a, .footer .informational a:hover { color:#fff; }
 .footer .informational a { text-decoration:none; }
-.footer .legality {
-    padding:13px 0;
-    color:#ecf3f6;
-    text-align:center;
-    }
-.footer .legality a, .footer .legality a:hover { color:#ecf3f6; }
-
 
 /************************************************************/
 /******************[ Mage_CSS_F Overrides]*******************/

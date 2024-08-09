@@ -52,15 +52,15 @@
     <button class="form-button" type="submit"><span><?= $this->__('Continue') ?></span></button>
 </div>
 </form>
-<script type="text/javascript">
+<script>
     function changeLocale(event){
         var elem = Event.element(event);
-        if(elem){
+        if (elem) {
             setLocation('<?= $this->getChangeUrl() ?>locale/'+elem.value+'/?timezone='+$('timezone').value+'&amp;currency='+$('currency').value);
         }
     }
     var dataForm = new VarienForm('form-validate');
-    if($('locale')){
+    if ($('locale')) {
         Event.observe($('locale'), 'change', changeLocale);
     }
 </script>

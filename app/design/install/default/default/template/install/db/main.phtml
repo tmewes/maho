@@ -20,8 +20,7 @@
  * @var $this Mage_Install_Block_Config
  */
 ?>
-<script type="text/javascript">
-//<![CDATA[
+<script>
 var dbTypeIds = [];
 function showContent(select)
 {
@@ -30,7 +29,6 @@ function showContent(select)
     });
     $(select.value + '_conn_form').show();
 }
-//]]>
 </script>
 
 <fieldset class="group-select">
@@ -54,14 +52,14 @@ function showContent(select)
         <?php foreach ($dbTypeOptions as $block): ?>
             <script type="text/javascript">
             //<![CDATA[
-                dbTypeIds[dbTypeIds.length] = "<?= $block->getIdPrefix(); ?>";
+                dbTypeIds[dbTypeIds.length] = "<?= $block->getIdPrefix() ?>";
             //]]>
             </script>
             <?php $block = $this->getDatabaseBlock($block->getIdPrefix()) ?>
 
-            <div id="<?= $block->getIdPrefix() ?>_conn_form" <?php if($this->getFormData()->getDbModel() != $block->getIdPrefix()):?>style="display:none;"<?php endif ?>>
+            <div id="<?= $block->getIdPrefix() ?>_conn_form" <?php if ($this->getFormData()->getDbModel() != $block->getIdPrefix()): ?>style="display:none;"<?php endif ?>>
                 <ul>
-                    <?= $block->toHtml(); ?>
+                    <?= $block->toHtml() ?>
                 </ul>
             </div>
         <?php endforeach ?>
