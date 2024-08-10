@@ -50,10 +50,8 @@ function showContent(select)
         <?php endif ?>
 
         <?php foreach ($dbTypeOptions as $block): ?>
-            <script type="text/javascript">
-            //<![CDATA[
+            <script>
                 dbTypeIds[dbTypeIds.length] = "<?= $block->getIdPrefix() ?>";
-            //]]>
             </script>
             <?php $block = $this->getDatabaseBlock($block->getIdPrefix()) ?>
 

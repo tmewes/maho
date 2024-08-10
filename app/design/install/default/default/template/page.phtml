@@ -13,16 +13,12 @@
  * @license     https://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php
-/**
- * Template for Mage_Page_Block_Html
- */
-?>
+<?php /** @var Mage_Core_Block_Template $this */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title><?= Mage::helper('install')->__('Maho Installation Wizard') ?></title>
+    <title><?= $this->__('Maho Installation Wizard') ?></title>
     <link rel="icon" href="<?= $this->getSkinUrl('images/favicon.svg') ?>" type="image/x-icon"/>
     <script type="text/javascript" src="<?= $jsUrl = $this->getJsUrl() ?>prototype/prototype.js"></script>
     <script type="text/javascript" src="<?= $jsUrl ?>prototype/validation.js"></script>
@@ -30,10 +26,8 @@
     <script type="text/javascript" src="<?= $jsUrl ?>mage/translate.js"></script>
     <script type="text/javascript" src="<?= $jsUrl ?>varien/js.js"></script>
     <script type="text/javascript" src="<?= $jsUrl ?>varien/form.js"></script>
-    <link rel="stylesheet" href="<?= $this->getSkinUrl('css/reset.css') ?>" type="text/css" media="all"/>
     <link rel="stylesheet" href="<?= $this->getSkinUrl('css/boxes.css') ?>" type="text/css" media="all"/>
     <link rel="stylesheet" href="<?= $this->getSkinUrl('css/clears.css') ?>" type="text/css" media="all"/>
-    <?= $this->helper('core/js')->getTranslatorScript() ?>
 </head>
 <body>
 <div class="header">
@@ -41,9 +35,7 @@
         <div class="header-top">
             <h1 id="logo">
                 <a href="/">
-                    <img src="<?= $this->getSkinUrl('images/logo.svg') ?>"
-                         title="<?= Mage::helper('install')->__('Maho') ?>"
-                         alt="<?= Mage::helper('install')->__('Maho') ?>">
+                    <img src="<?= $this->getSkinUrl('images/logo.svg') ?>" alt="<?= $this->__('Maho') ?>">
                 </a>
             </h1>
             <?= $this->getChildHtml('topSearch') ?>
@@ -62,7 +54,6 @@
 <?= $this->getChildHtml('store') ?>
 <div class="middle-container">
     <div class="middle col-2-left-layout">
-        <?= $this->getChildHtml('breadcrumbs') ?>
         <div class="col-left side-col">
             <?= $this->getChildHtml('left') ?>
         </div>
@@ -75,15 +66,12 @@
 <div class="footer-container">
     <div class="footer">
         <p class="legality">
-            <?= Mage::helper('install')->__('Help Us to Keep Maho Healthy') ?> - <a
-                    href="https://github.com/OpenMage/magento-lts/issues"
-                    id="bug_tracking_link"><strong><?= Mage::helper('install')->__('Report All Bugs') ?></strong></a> <?= Mage::helper('install')->__('(v%s)', Mage::getOpenMageVersion()) ?>
-            <br>
+            <?= $this->__('Help Us to Keep Maho Healthy') ?> -
+            <a href="https://github.com/MahoCommerce/maho/issues"
+               target="_blank"><strong><?= $this->__('Report All Bugs') ?></strong></a>
+            <?= $this->__('(v%s)', Mage::getOpenMageVersion()) ?>
         </p>
     </div>
 </div>
-<script>
-    $('bug_tracking_link').target = "varien_external";
-</script>
 </body>
 </html>

@@ -24,7 +24,7 @@
     <h3><?= $this->__('Configuration') ?></h3>
 </div>
 <?= $this->getMessagesBlock()->toHtml() ?>
-<?php if($this->getInstaller()->getServerCheckStatus()): ?>
+<?php if ($this->getInstaller()->getServerCheckStatus()): ?>
 <form action="<?= $this->getPostUrl() ?>" method="post" id="form-validate">
 
 <!-- database connection -->
@@ -53,7 +53,7 @@
             </p>
         </li>
         <li>
-            <input type="checkbox" name="skip_base_url_validation" id="skip_base_url_validation" value="1" <?php if($this->getSkipBaseUrlValidation()): ?>checked="checked"<?php endif ?> />
+            <input type="checkbox" name="skip_base_url_validation" id="skip_base_url_validation" value="1" <?php if ($this->getSkipBaseUrlValidation()): ?>checked="checked"<?php endif ?> />
             <label for="skip_base_url_validation"><?= $this->__('Skip Base URL Validation Before the Next Step') ?></label><br />
             <p style="margin-top:4px; line-height:1.3em; color:#666;">
                 <small><?= $this->__('Check this box only if it is not possible to automatically validate the Base URL.') ?></small>
@@ -82,7 +82,7 @@
             <label for="secure_base_url"><?= $this->__('Secure Base URL') ?> <span class="required">*</span></label><br />
             <input type="text" name="config[secure_base_url]" id="secure_base_url" value="<?= $this->getFormData()->getSecureBaseUrl() ?>" title="<?= Mage::helper('core')->quoteEscape($this->__('Secure Base URL')) ?>" class="required-entry validate-url input-text" />
             <p style="margin-top:4px; line-height:1.3em; color:#666;">
-                <small><?= $this->__('Provide a complete base URL for SSL connection. For example: %s', '<strong>https://www.mydomain.com/openmage/</strong>') ?></small>
+                <small><?= $this->__('Provide a complete base URL for SSL connection. For example: %s', '<strong>https://www.mydomain.com/maho/</strong>') ?></small>
             </p>
         </li>
         <li>
@@ -114,7 +114,7 @@
 
 <div class="button-set">
     <p class="required">* <?= $this->__('Required Fields') ?></p>
-    <button class="form-button" type="submit"><span><?= $this->__('Continue') ?></span></button>
+    <button class="form-button" type="submit"><?= $this->__('Continue') ?></button>
 </div>
 </form>
 <script>

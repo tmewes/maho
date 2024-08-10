@@ -31,17 +31,17 @@
     <ul>
         <li>
             <div class="input-box">
-                <label for="locale"><?= $this->__('Locale') ?> <span class="required">*</span></label><br/>
+                <label for="locale"><?= $this->__('Locale') ?> <span class="required">*</span></label><br>
                 <?= $this->getLocaleSelect() ?>
             </div>
         </li>
         <li>
             <div class="input-box">
-                <label for="timezone"><?= $this->__('Time Zone') ?> <span class="required">*</span></label><br/>
+                <label for="timezone"><?= $this->__('Time Zone') ?> <span class="required">*</span></label><br>
                 <?= $this->getTimezoneSelect() ?>
             </div>
             <div class="input-box">
-                <label for="currency"><?= $this->__('Default Currency') ?> <span class="required">*</span></label><br/>
+                <label for="currency"><?= $this->__('Default Currency') ?> <span class="required">*</span></label><br>
                 <?= $this->getCurrencySelect() ?>
             </div>
         </li>
@@ -49,7 +49,7 @@
 </fieldset>
 <div class="button-set">
     <p class="required">* <?= $this->__('Required Fields') ?></p>
-    <button class="form-button" type="submit"><span><?= $this->__('Continue') ?></span></button>
+    <button class="form-button" type="submit"><?= $this->__('Continue') ?></button>
 </div>
 </form>
 <script>
