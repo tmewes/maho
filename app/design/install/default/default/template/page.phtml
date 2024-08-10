@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8">
     <title><?= $this->__('Maho Installation Wizard') ?></title>
     <link rel="icon" href="<?= $this->getSkinUrl('images/favicon.svg') ?>" type="image/x-icon"/>
     <script type="text/javascript" src="<?= $jsUrl = $this->getJsUrl() ?>prototype/prototype.js"></script>
@@ -31,27 +31,14 @@
 </head>
 <body>
 <div class="header">
-    <div class="header-top-container">
-        <div class="header-top">
-            <h1 id="logo">
-                <a href="/">
-                    <img src="<?= $this->getSkinUrl('images/logo.svg') ?>" alt="<?= $this->__('Maho') ?>">
-                </a>
-            </h1>
-            <?= $this->getChildHtml('topSearch') ?>
-            <div class="quick-access">
-                <div class="account-access">
-                    <strong>&nbsp;<?= $this->getWelcome() ?></strong> <?= $this->getChildHtml('topLeftLinks') ?>
-                </div>
-                <div class="shop-access">
-                    <?= $this->getChildHtml('topRightLinks') ?>
-                </div>
-            </div>
-        </div>
+    <div class="header-top">
+        <h1 id="logo">
+            <a href="/">
+                <img src="<?= $this->getSkinUrl('images/logo.svg') ?>" alt="<?= $this->__('Maho') ?>">
+            </a>
+        </h1>
     </div>
-    <?= $this->getChildHtml('topMenu') ?>
 </div>
-<?= $this->getChildHtml('store') ?>
 <div class="middle-container">
     <div class="middle col-2-left-layout">
         <div class="col-left side-col">
@@ -63,15 +50,11 @@
         </div>
     </div>
 </div>
-<div class="footer-container">
-    <div class="footer">
-        <p class="legality">
-            <?= $this->__('Help Us to Keep Maho Healthy') ?> -
-            <a href="https://github.com/MahoCommerce/maho/issues"
-               target="_blank"><strong><?= $this->__('Report All Bugs') ?></strong></a>
-            <?= $this->__('(v%s)', Mage::getOpenMageVersion()) ?>
-        </p>
-    </div>
-</div>
+<footer>
+    <?= $this->__('Help Us to Keep Maho Healthy') ?> -
+    <a href="https://github.com/MahoCommerce/maho/issues"
+       target="_blank"><strong><?= $this->__('Report All Bugs') ?></strong></a>
+    <?= $this->__('(v%s)', Mage::getOpenMageVersion()) ?>
+</footer>
 </body>
 </html>

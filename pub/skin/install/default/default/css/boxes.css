@@ -24,14 +24,14 @@ ul, ol { list-style:none; }
 /* Form */
 form { display:inline;}
 fieldset { border:none; }
-legend { display:none; display:block !important; height:0; line-height:0; margin:0; overflow:hidden; padding:0; width:0; visibility:hidden; }
-label { color:#666; /*font-size:.95em;*/  font-weight:bold; }
+legend { display:block; height:0; line-height:0; margin:0; overflow:hidden; padding:0; width:0; visibility:hidden; }
+label { color:#666; font-weight:bold; }
 input, select, button { vertical-align:middle; }
 
 /********************** Columns */
 
 /* All */
-.col2-set, .col3-set, .col4-set, .col5-set {
+.col2-set, .col3-set, .col5-set {
     clear: both;
 }
 
@@ -75,28 +75,8 @@ input, select, button { vertical-align:middle; }
     margin-right: 3%;
 }
 
-/* Col4 */
-.col4-set .col-1, .col4-set .col-2, .col4-set .col-3, .col4-set .col-4 {
-    float: left;
-    width: 22%;
-}
-
-.col4-set .col-1, .col4-set .col-2, .col4-set .col-3 {
-    margin-right: 4%;
-}
-
-/* Table Columns */
-table .col-1, table .col-2, table .col-3, table .col-4 {
-    float: none !important;
-    margin: 0 !important;
-}
-
 .col3-set td.spacer {
     width: 3%;
-}
-
-.col4-set td.spacer {
-    width: 4%;
 }
 
 
@@ -287,18 +267,9 @@ p.required {
     background-image: url(../images/note_msg_icon.gif);
 }
 
-
-/********************** Headings */
-
-.head, .inner-head {
-    line-height: 1.25em;
-    text-align: right;
-}
-
 h2 {
     margin: 0;
 }
-
 
 /* Page heading */
 .page-head {
@@ -306,31 +277,16 @@ h2 {
     border-bottom: 1px solid #ccc;
 }
 
-.page-head-alt {
-    margin: 0 0 12px 0;
-}
-
-.page-head, .page-head-alt {
+.page-head {
     text-align: right;
 }
 
-.page-head h3, .page-head-alt h3 {
+.page-head h3 {
     margin: 0;
     font-size: 1.7em !important;
     font-weight: normal !important;
     text-transform: none !important;
     text-align: left;
-}
-
-
-/********************** Space Creators */
-
-.no-wrap {
-    white-space: nowrap;
-}
-
-.content-box {
-    min-height: 250px;
 }
 
 /* Set minimum height for visual presentation */
@@ -343,32 +299,6 @@ h2 {
     line-height: 1.3em;
 }
 
-.separator {
-    padding: 0 5px;
-}
-
-.pipe {
-    padding: 0 4px;
-    font-size: .95em;
-}
-
-.divider {
-    margin: 10px 0;
-    height: 1px;
-    background: url(../images/dotted_divider.gif) repeat-x;
-    font-size: 1px;
-    line-height: 1em;
-    overflow: hidden;
-}
-
-
-/************************************************************/
-/********************[ Mage_CSS_C Layout]********************/
-/************************************************************/
-
-
-/********************** Base Layout */
-
 /* Structure */
 .header {
     text-align: left;
@@ -376,11 +306,6 @@ h2 {
 
 .header-top {
     width: 930px;
-    margin: 0 auto;
-}
-
-.header-nav {
-    width: 950px;
     margin: 0 auto;
 }
 
@@ -402,10 +327,6 @@ h2 {
 
 .col-main {
     float: left;
-}
-
-.col-right {
-    float: right;
 }
 
 .col-1-layout .col-main {
@@ -433,12 +354,6 @@ h2 {
     padding: 10px;
 }
 
-.header-nav-container {
-    background: url(../images/nav_bg.jpg) repeat-y 50% 0 #0a263d;
-}
-
-/********************** Header */
-
 /* Logo */
 h1#logo {
     float: left;
@@ -446,84 +361,11 @@ h1#logo {
     margin: 3px 0 0 12px;
 }
 
-.page-popup h1#logo {
-    display: none;
-}
-
-
-/* Quick Access*/
-.quick-access {
-    width: 390px;
-    float: right;
-    margin-top: 28px;
-    text-align: right;
-    padding: 0 10px;
-    color: #fff;
-}
-
-.quick-access p {
-    margin-bottom: 4px;
-}
-
-.quick-access li {
-    display: inline;
-    background: url(../images/shop_access_pipe.gif) no-repeat 100% .35em;
-    padding-right: 7px;
-    padding-left: 3px;
-}
-
-.quick-access li.first {
-    padding-left: 0;
-}
-
-.quick-access li.last {
-    padding-right: 0;
-    background: none;
-}
-
-.account-access p, .account-access ul, .account-access li {
-    display: inline;
-    color: #fff;
-}
-
-.account-access a, .account-access a:hover {
-    color: #e1f1fb;
-}
-
-.account-access ul {
-    padding-left: 10px;
-    font-size: .95em;
-}
-
-.shop-access a, .shop-access a:hover {
-    color: #ebbc58;
-    font-size: .95em;
-}
-
-/********************** Footer */
-.footer {
+footer {
     width: 930px;
     margin: 0 auto;
     padding: 1em 1em 4em 1em;
     position: relative;
-}
-
-/************************************************************/
-/******************[ Mage_CSS_F Overrides]*******************/
-/************************************************************/
-
-
-/* Alignment */
-.v-top {
-    vertical-align: top;
-}
-
-.v-middle {
-    vertical-align: middle;
-}
-
-.v-bottom {
-    vertical-align: bottom;
 }
 
 .a-left {
@@ -544,12 +386,4 @@ h1#logo {
 
 .right {
     float: right !important;
-}
-
-.normal-weight {
-    font-weight: normal;
-}
-
-.auto-width {
-    width: auto;
 }
