@@ -21,6 +21,11 @@ body {
 
 ul, ol { list-style:none; }
 
+li.active {
+    color: green;
+    font-weight: bold;
+}
+
 /* Form */
 form { display:inline;}
 fieldset { border:none; }

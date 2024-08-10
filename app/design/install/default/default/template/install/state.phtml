@@ -13,17 +13,16 @@
  * @license     https://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div style="border:1px solid #ccc; background:#f6f6f6;">
-    <h2 style="margin-bottom:0; border-bottom:1px solid #ccc; padding:4px 10px; color:#3c5974; font-size:1.4em;"><?= $this->__('Installation') ?></h2>
-<ol style="padding:10px; border-top:1px solid #fff;">
-<?php foreach ($steps as $_step): ?>
-    <li <?php if ($_step->getActive()): ?>style="color:green; font-weight:bold; "<?php endif ?>><?= $this->__($_step->getCode()) ?></li>
-<?php endforeach ?>
-</ol>
-</div>
-
-<br/>
-<p>
-    <?= $this->__('Having trouble installing Maho?') ?>
-    <?= $this->__('Check out our') ?> <a href="https://mahocommerce.com/getting-started" target="_blank"><?= $this->__('Installation Guide') ?></a>
-</p>
+<aside>
+    <h2><?= $this->__('Installation') ?></h2>
+    <ul>
+        <?php foreach ($steps as $_step): ?>
+            <li <?php if ($_step->getActive()): ?>class="active"<?php endif ?>><?= $this->__($_step->getCode()) ?></li>
+        <?php endforeach ?>
+    </ul>
+    <p>
+        <?= $this->__('Having trouble installing Maho?') ?>
+        <?= $this->__('Check out our') ?>
+        <a href="https://mahocommerce.com/getting-started" target="_blank"><?= $this->__('Installation Guide') ?></a>
+    </p>
+</aside>
