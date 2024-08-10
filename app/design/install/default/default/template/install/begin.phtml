@@ -23,7 +23,6 @@
     <h3><?= $this->__("Welcome to Maho's Installation Wizard") ?>!</h3>
 </div>
 <?= $this->getMessagesBlock()->toHtml() ?>
-<?php if (count($this->getMessagesBlock()->getMessages()) === 0): ?>
 <form action="<?= $this->getPostUrl() ?>" method="post">
 <div style="height:20em; border:1px solid #ccc; margin-bottom:8px; padding:5px; background:#fff; overflow: auto; overflow-x:hidden; overflow-y:scroll;">
 <?= $this->getLicenseHtml() ?>
@@ -32,8 +31,5 @@
         <input type="checkbox" name="agree" value="1" id="agree" onclick="document.querySelector('#submitButton').toggleAttribute('disabled')" class="checkbox">
         <label for="agree"><?= $this->__('I agree to the above terms and conditions.') ?></label>
     </p>
-    <div class="button-set">
-        <button class="form-button" type="submit" id="submitButton" disabled><?= $this->__('Continue') ?></button>
-    </div>
+    <button class="form-button" type="submit" id="submitButton" disabled><?= $this->__('Continue') ?></button>
 </form>
-<?php endif ?>
