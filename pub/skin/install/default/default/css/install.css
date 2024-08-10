@@ -255,6 +255,12 @@ header {
     overflow: hidden;
 }
 
+#logo {
+    float: left;
+    width: 202px;
+    margin: 3px 0 0 12px;
+}
+
 main {
     min-height: 400px;
     width: 900px;
@@ -271,12 +277,6 @@ article {
 aside {
     width: 195px;
     float: left;
-}
-
-#logo {
-    float: left;
-    width: 202px;
-    margin: 3px 0 0 12px;
 }
 
 footer {
