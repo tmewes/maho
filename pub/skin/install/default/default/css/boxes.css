@@ -271,7 +271,6 @@ h2 {
     margin: 0;
 }
 
-/* Page heading */
 .page-head {
     margin: 0 0 25px 0;
     border-bottom: 1px solid #ccc;
@@ -299,14 +298,12 @@ h2 {
     line-height: 1.3em;
 }
 
-/* Structure */
-.header {
+header {
     text-align: left;
-}
-
-.header-top {
     width: 930px;
     margin: 0 auto;
+    padding: 10px;
+    overflow: hidden;
 }
 
 .middle {
@@ -349,13 +346,7 @@ h2 {
     margin-left: 17px;
 }
 
-/* Style */
-.header-top {
-    padding: 10px;
-}
-
-/* Logo */
-h1#logo {
+#logo {
     float: left;
     width: 202px;
     margin: 3px 0 0 12px;
@@ -366,6 +357,7 @@ footer {
     margin: 0 auto;
     padding: 1em 1em 4em 1em;
     position: relative;
+    clear: both;
 }
 
 .a-left {
