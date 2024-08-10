@@ -16,7 +16,7 @@
 /**
  * Install localization template
  *
- * @see Mage_Install_Block_Locale
+ * @var Mage_Install_Block_Locale $this
  */
 ?>
 <div class="page-head">
@@ -54,13 +54,14 @@
 </form>
 <script>
     function changeLocale(event){
-        var elem = Event.element(event);
-        if (elem) {
-            setLocation('<?= $this->getChangeUrl() ?>locale/'+elem.value+'/?timezone='+$('timezone').value+'&amp;currency='+$('currency').value);
-        }
+        window.location =
+            '<?= $this->getChangeUrl() ?>'
+            + 'locale/'
+            + event.target.value
+            + '/?timezone='
+            + document.querySelector('#timezone').value
+            + '&amp;currency='
+            + document.querySelector('#currency').value;
     }
-    var dataForm = new VarienForm('form-validate');
-    if ($('locale')) {
-        Event.observe($('locale'), 'change', changeLocale);
-    }
+    document.querySelector('#locale').addEventListener('change', changeLocale);
 </script>
