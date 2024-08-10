@@ -270,21 +270,14 @@ main {
     position: relative;
 }
 
-.side-col {
-    width: 195px;
-}
-
-.col-left {
-    float: left;
-}
-
-.col-main {
-    float: left;
-}
-
-.col-2-left-layout .col-main {
+article {
     float: right;
     width: 685px;
+}
+
+aside {
+    width: 195px;
+    float: left;
 }
 
 #logo {
