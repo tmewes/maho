@@ -13,16 +13,15 @@
  * @license     https://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<aside>
-    <h2><?= $this->__('Installation') ?></h2>
-    <ul>
-        <?php foreach ($steps as $_step): ?>
-            <li <?php if ($_step->getActive()): ?>class="active"<?php endif ?>><?= $this->__($_step->getCode()) ?></li>
-        <?php endforeach ?>
-    </ul>
-    <p>
-        <?= $this->__('Having trouble installing Maho?') ?>
-        <?= $this->__('Check out our') ?>
-        <a href="https://mahocommerce.com/getting-started" target="_blank"><?= $this->__('Installation Guide') ?></a>
-    </p>
-</aside>
+<?php /** @var Mage_Install_Block_State $this */ ?>
+<h2><?= $this->__('Installation') ?></h2>
+<ul>
+    <?php foreach ($steps as $step): ?>
+        <li <?php if ($step->getActive()): ?>class="active"<?php endif ?>><?= $this->__($step->getCode()) ?></li>
+    <?php endforeach ?>
+</ul>
+<p>
+    <?= $this->__('Having trouble installing Maho?') ?>
+    <?= $this->__('Check out our') ?>
+    <a href="https://mahocommerce.com/getting-started" target="_blank"><?= $this->__('Installation Guide') ?></a>
+</p>

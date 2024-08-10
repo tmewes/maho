@@ -34,17 +34,17 @@
         <img src="<?= $this->getSkinUrl('images/logo.svg') ?>" alt="<?= $this->__('Maho') ?>">
     </a>
 </header>
-<div class="middle-container">
-    <div class="middle col-2-left-layout">
-        <div class="col-left side-col">
+<main>
+    <div class="col-2-left-layout">
+        <aside class="col-left side-col">
             <?= $this->getChildHtml('left') ?>
-        </div>
-        <div id="main" class="col-main">
+        </aside>
+        <article id="main" class="col-main">
             <?= $this->getChildHtml('global_messages') ?>
             <?= $this->getChildHtml('content') ?>
-        </div>
+        </article>
     </div>
-</div>
+</main>
 <footer>
     <?= $this->__('Help Us to Keep Maho Healthy') ?> -
     <a href="https://github.com/MahoCommerce/maho/issues"
