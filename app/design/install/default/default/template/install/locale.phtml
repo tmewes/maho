@@ -19,9 +19,7 @@
  * @var Mage_Install_Block_Locale $this
  */
 ?>
-<div class="page-head">
-    <h3><?= $this->__('Localization') ?></h3>
-</div>
+<h1><?= $this->__('Localization') ?></h1>
 <?= $this->getMessagesBlock()->toHtml() ?>
 
 <form action="<?= $this->getPostUrl() ?>" method="get" id="form-validate">

@@ -19,9 +19,7 @@
  * @see Mage_Install_Block_End
  */
 ?>
-<div class="page-head">
-    <h3><?= $this->__("You're All Set") ?>!</h3>
-</div>
+<h1><?= $this->__("You're All Set") ?>!</h1>
 <?php if ($this->getIframeSourceUrl()): ?>
     <iframe id="iframe_box" src="<?= $this->getIframeSourceUrl() ?>" frameborder="0" width="650" height="600"></iframe>
 <?php endif ?>
