@@ -17,16 +17,15 @@
 <h1><?= $this->__("Welcome to Maho's Installation Wizard!") ?></h1>
 <?= $this->getMessagesBlock()->toHtml() ?>
 <form action="<?= $this->getPostUrl() ?>" method="post">
-    <div style="height:20em; border:1px solid #ccc; padding:5px; overflow-y: scroll;">
-        <?= $this->getLicenseHtml() ?>
-    </div>
+    <section class="license">
+        <cite><?= $this->getLicenseHtml() ?></cite>
+    </section>
     <label>
         <input type="checkbox"
                name="agree"
                value="1"
-               onclick="document.querySelector('#submitButton').toggleAttribute('disabled')"
-               class="checkbox">
+               onclick="document.querySelector('#submitButton').toggleAttribute('disabled')">
         <?= $this->__('I agree to the above terms and conditions.') ?>
     </label>
-    <button class="form-button" type="submit" id="submitButton" disabled><?= $this->__('Continue') ?></button>
+    <button type="submit" id="submitButton" disabled><?= $this->__('Continue') ?></button>
 </form>

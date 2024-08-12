@@ -21,50 +21,50 @@
         <?= $this->getLayout()->getBlock('database')->toHtml() ?>
 
         <section>
-            <h4 class="legend"><?= $this->__('Web access options') ?></h4>
+            <h4><?= $this->__('Web access options') ?></h4>
             <ul>
                 <li>
-                    <label for="base_url"><?= $this->__('Base URL') ?> <span class="required">*</span></label><br/>
+                    <label for="base_url"><?= $this->__('Base URL') ?> <span class="required">*</span></label><br>
                     <input type="text" name="config[unsecure_base_url]" id="base_url"
                            value="<?= $this->getFormData()->getUnsecureBaseUrl() ?>"
                            title="<?= Mage::helper('core')->quoteEscape($this->__('Base URL')) ?>"
-                           class="required-entry validate-url input-text"/>
+                           class="required-entry validate-url">
                 </li>
                 <li>
                     <label for="admin_frontname"><?= $this->__('Admin Path') ?> <span
-                                class="required">*</span></label><br/>
+                                class="required">*</span></label><br>
                     <input type="text" name="config[admin_frontname]" id="admin_frontname"
                            value="<?= $this->getFormData()->getAdminFrontname() ?>"
-                           title="<?= Mage::helper('core')->quoteEscape($this->__('Admin Path')) ?>"
-                           class="required-entry validate-data input-text"/>
+                           title="<?= $this->__('Admin Path') ?>"
+                           class="required-entry validate-data">
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
                         <small><?= $this->__('Additional path added after Base URL to access your Administrative Panel (e.g. admin, backend, control etc.).') ?></small>
                     </p>
                 </li>
                 <li>
                     <input type="checkbox" name="config[enable_charts]" id="enable_charts" value="1"
-                           <?php if ($this->getFormData()->getEnableCharts()): ?>checked="checked"<?php endif ?> />
-                    <label for="enable_charts"><?= $this->__('Enable Charts') ?></label><br/>
+                           <?php if ($this->getFormData()->getEnableCharts()): ?>checked="checked"<?php endif ?>>
+                    <label for="enable_charts"><?= $this->__('Enable Charts') ?></label><br>
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
                         <small><?= $this->__('Enable this option if you want the charts to be displayed on Dashboard.') ?></small>
                     </p>
                 </li>
                 <li>
                     <input type="checkbox" name="skip_base_url_validation" id="skip_base_url_validation" value="1"
-                           <?php if ($this->getSkipBaseUrlValidation()): ?>checked="checked"<?php endif ?> />
-                    <label for="skip_base_url_validation"><?= $this->__('Skip Base URL Validation Before the Next Step') ?></label><br/>
+                           <?php if ($this->getSkipBaseUrlValidation()): ?>checked="checked"<?php endif ?>>
+                    <label for="skip_base_url_validation"><?= $this->__('Skip Base URL Validation Before the Next Step') ?></label><br>
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
                         <small><?= $this->__('Check this box only if it is not possible to automatically validate the Base URL.') ?></small>
                     </p>
                 </li>
                 <li>
                     <input type="checkbox" name="config[use_rewrites]" id="use_rewrites" value="1"
-                           <?php if ($this->getFormData()->getUseRewrites()): ?>checked="checked"<?php endif ?> />
-                    <label for="use_rewrites"><?= $this->__('Use Web Server (Apache) Rewrites') ?></label><br/>
+                           <?php if ($this->getFormData()->getUseRewrites()): ?>checked="checked"<?php endif ?>>
+                    <label for="use_rewrites"><?= $this->__('Use Web Server (Apache) Rewrites') ?></label><br>
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
                         <small>
                             <?= $this->__('You could enable this option to use web server rewrites functionality for improved search engines optimization.') ?>
-                            <br/>
+                            <br>
                             <strong><?= $this->__('Please make sure that <code>mod_rewrite</code> is enabled in Apache configuration.') ?></strong>
                         </small>
                     </p>
@@ -72,8 +72,8 @@
                 <li>
                     <input type="checkbox" name="config[use_secure]" id="use_secure" value="1"
                            <?php if ($this->getFormData()->getUseSecure()): ?>checked="checked"<?php endif ?>
-                           onclick="this.checked ? $('use_secure_options').show() : $('use_secure_options').hide(); return true;"/>
-                    <label for="use_secure"><?= $this->__('Use Secure URLs (SSL)') ?></label><br/>
+                           onclick="this.checked ? $('use_secure_options').show() : $('use_secure_options').hide(); return true;">
+                    <label for="use_secure"><?= $this->__('Use Secure URLs (SSL)') ?></label><br>
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
                         <small><?= $this->__('Enable this option only if you have SSL available.') ?></small>
                     </p>
@@ -87,20 +87,20 @@
                     <input type="text" name="config[secure_base_url]" id="secure_base_url"
                            value="<?= $this->getFormData()->getSecureBaseUrl() ?>"
                            title="<?= Mage::helper('core')->quoteEscape($this->__('Secure Base URL')) ?>"
-                           class="required-entry validate-url input-text"/>
+                           class="required-entry validate-url">
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
                         <small><?= $this->__('Provide a complete base URL for SSL connection. For example: %s', '<strong>https://www.mydomain.com/maho/</strong>') ?></small>
                     </p>
                 </li>
                 <li>
                     <input type="checkbox" name="config[use_secure_admin]" id="use_secure_admin" value="1"
-                           <?php if ($this->getFormData()->getUseSecureAdmin()): ?>checked="checked"<?php endif ?> />
-                    <label for="use_secure_admin"><?= $this->__('Run admin interface with SSL') ?></label><br/>
+                           <?php if ($this->getFormData()->getUseSecureAdmin()): ?>checked="checked"<?php endif ?>>
+                    <label for="use_secure_admin"><?= $this->__('Run admin interface with SSL') ?></label><br>
                 </li>
                 <li>
                     <input type="checkbox" name="skip_url_validation" id="skip_url_validation" value="1"
-                           <?php if ($this->getSkipUrlValidation()): ?>checked="checked"<?php endif ?> />
-                    <label for="skip_url_validation"><?= $this->__('Skip Secure URL validation before next step') ?></label><br/>
+                           <?php if ($this->getSkipUrlValidation()): ?>checked="checked"<?php endif ?>>
+                    <label for="skip_url_validation"><?= $this->__('Skip Secure URL validation before next step') ?></label><br>
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
                         <small><?= $this->__('Check this box only if it is not possible to automatically validate Secure URL, for example if HTTP authentication is required.') ?></small>
                     </p>
@@ -109,7 +109,7 @@
         </section>
 
         <section>
-            <h4 class="legend"><?= $this->__('Session Storage Options') ?></h4>
+            <h4><?= $this->__('Session Storage Options') ?></h4>
             <ul>
                 <li>
                     <div class="input-box">
@@ -122,13 +122,13 @@
 
         <div class="button-set">
             <p class="required">* <?= $this->__('Required Fields') ?></p>
-            <button class="form-button" type="submit"><?= $this->__('Continue') ?></button>
+            <button type="submit"><?= $this->__('Continue') ?></button>
         </div>
     </form>
 <?php else: ?>
     <div><?= $this->__('Please set all required settings before clicking Continue') ?></div>
     <div class="button-set">
-        <button class="form-button" type="button"
+        <button type="button"
                 onclick="setLocation('<?= $this->getUrl('*/*/*', ['_current' => true]) ?>')"><?= $this->__('Continue') ?></button>
     </div>
 <?php endif ?>

@@ -19,7 +19,7 @@
 
 <form action="<?= $this->getPostUrl() ?>" method="get" id="form-validate">
     <section>
-        <h4 class="legend"><?= $this->__('Locale settings') ?></h4>
+        <h4><?= $this->__('Locale settings') ?></h4>
         <ul>
             <li>
                 <div class="input-box">
@@ -41,7 +41,7 @@
         </ul>
     </section>
     <p class="required">* <?= $this->__('Required Fields') ?></p>
-    <button class="form-button" type="submit"><?= $this->__('Continue') ?></button>
+    <button type="submit"><?= $this->__('Continue') ?></button>
 </form>
 <script>
     function changeLocale(event) {
