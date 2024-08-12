@@ -12,84 +12,84 @@
  * @copyright   Copyright (c) 2020-2022 The OpenMage Contributors (https://www.openmage.org)
  * @license     https://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
-/**
- * Administrator account installation
- *
- * @see Mage_Install_Block_Admin
- */
 ?>
+<?php /** @var Mage_Install_Block_Admin $this */ ?>
 <h1><?= $this->__('Create Admin Account') ?></h1>
 <?= $this->getMessagesBlock()->toHtml() ?>
 <form action="<?= $this->getPostUrl() ?>" method="post" id="form-validate">
-<fieldset class="group-select wide">
- <legend><?= $this->__('Personal Information') ?></legend>
-    <h4 class="legend"><?= $this->__('Personal Information') ?></h4>
-    <ul>
-        <li>
-            <div class="input-box">
-                <label for="firstname"><?= $this->__('First Name') ?> <span class="required">*</span></label><br>
-                <input type="text" name="admin[firstname]" id="firstname" value="<?= $this->getFormData()->getFirstname() ?>" title="<?= $this->__('First Name') ?>" class="required-entry input-text">
-            </div>
-            <div class="input-box">
-                <label for="lastname"><?= $this->__('Last Name') ?> <span class="required">*</span></label><br>
-                <input type="text" name="admin[lastname]" id="lastname" value="<?= $this->getFormData()->getLastname() ?>" title="<?= $this->__('Last Name') ?>" class="required-entry input-text">
-            </div>
-        </li>
-        <li>
-            <label for="email_address"><?= $this->__('Email') ?> <span class="required">*</span></label><br>
-            <input type="text" name="admin[email]" id="email_address" value="<?= $this->getFormData()->getEmail() ?>" title="<?= $this->__('Email Address') ?>" class="validate-email required-entry input-text">
-        </li>
-    </ul>
-</fieldset>
-<fieldset class="group-select wide">
-    <legend><?= $this->__('Login Information') ?></legend>
-    <h4 class="legend"><?= $this->__('Login Information') ?></h4>
-    <ul>
-        <li>
-            <label for="username"><?= $this->__('Username') ?> <span class="required">*</span></label><br/>
-            <input type="text" name="admin[username]" id="username" value="<?= $this->getFormData()->getUsername() ?>" title="<?= $this->__('Username') ?>" class="required-entry input-text">
-        </li>
-        <li>
-            <div class="input-box">
-                <label for="password"><?= $this->__('Password') ?> <span class="required">*</span></label><br>
-                <?php $minAdminPasswordLength = $this->getMinAdminPasswordLength(); ?>
-                <input type="password"
-                       name="admin[new_password]"
-                       id="password"
-                       title="<?= $this->__('Password') ?>"
-                       class="required-entry validate-admin-password input-text min-admin-pass-length-<?= $minAdminPasswordLength ?>"
-                       autocomplete="new-password">
-                <p class="note">
+    <section>
+        <h4 class="legend"><?= $this->__('Personal Information') ?></h4>
+        <ul>
+            <li>
+                <div class="input-box">
+                    <label for="firstname"><?= $this->__('First Name') ?> <span class="required">*</span></label><br>
+                    <input type="text" name="admin[firstname]" id="firstname"
+                           value="<?= $this->getFormData()->getFirstname() ?>" title="<?= $this->__('First Name') ?>"
+                           class="required-entry input-text">
+                </div>
+                <div class="input-box">
+                    <label for="lastname"><?= $this->__('Last Name') ?> <span class="required">*</span></label><br>
+                    <input type="text" name="admin[lastname]" id="lastname"
+                           value="<?= $this->getFormData()->getLastname() ?>" title="<?= $this->__('Last Name') ?>"
+                           class="required-entry input-text">
+                </div>
+            </li>
+            <li>
+                <label for="email_address"><?= $this->__('Email') ?> <span class="required">*</span></label><br>
+                <input type="text" name="admin[email]" id="email_address"
+                       value="<?= $this->getFormData()->getEmail() ?>" title="<?= $this->__('Email Address') ?>"
+                       class="validate-email required-entry input-text">
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h4 class="legend"><?= $this->__('Login Information') ?></h4>
+        <ul>
+            <li>
+                <label for="username"><?= $this->__('Username') ?> <span class="required">*</span></label><br/>
+                <input type="text" name="admin[username]" id="username"
+                       value="<?= $this->getFormData()->getUsername() ?>" title="<?= $this->__('Username') ?>"
+                       class="required-entry input-text">
+            </li>
+            <li>
+                <div class="input-box">
+                    <label for="password"><?= $this->__('Password') ?> <span class="required">*</span></label><br>
+                    <?php $minAdminPasswordLength = $this->getMinAdminPasswordLength(); ?>
+                    <input type="password"
+                           name="admin[new_password]"
+                           id="password"
+                           title="<?= $this->__('Password') ?>"
+                           class="required-entry validate-admin-password input-text min-admin-pass-length-<?= $minAdminPasswordLength ?>"
+                           autocomplete="new-password">
+                    <p class="note">
                     <span>
                         <?= Mage::helper('adminhtml')->__('Password must be at least of %d characters.', $minAdminPasswordLength) ?>
                     </span>
+                    </p>
+                </div>
+                <div class="input-box">
+                    <label for="confirmation"><?= $this->__('Confirm Password') ?> <span
+                                class="required">*</span></label><br>
+                    <input type="password" name="admin[password_confirmation]"
+                           title="<?= $this->__('Password Confirmation') ?>" id="confirmation"
+                           class="required-entry validate-cpassword input-text" autocomplete="new-password">
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h4 class="legend"><?= $this->__('Encryption Key') ?></h4>
+        <ul>
+            <li>
+                <input type="text" name="encryption_key" id="encryption_key"
+                       value="<?= $this->getFormData()->getEncryptionKey() ?>"
+                       title="<?= $this->__('Encryption Key') ?>" class="input-text">
+                <p style="margin-top:4px; line-height:1.3em; color:#666;">
+                    <small><?= $this->__('Maho uses this key to encrypt passwords, credit cards and more. If this field is left empty the system will create an encryption key for you and will display it on the next page.') ?></small>
                 </p>
-            </div>
-            <div class="input-box">
-                <label for="confirmation"><?= $this->__('Confirm Password') ?> <span class="required">*</span></label><br>
-                <input type="password" name="admin[password_confirmation]" title="<?= $this->__('Password Confirmation') ?>" id="confirmation" class="required-entry validate-cpassword input-text" autocomplete="new-password">
-            </div>
-        </li>
-    </ul>
-</fieldset>
-<fieldset class="group-select wide">
-    <legend><?= $this->__('Encryption Key') ?></legend>
-    <h4 class="legend"><?= $this->__('Encryption Key') ?></h4>
-    <ul>
-        <li>
-            <input type="text" name="encryption_key" id="encryption_key" value="<?= $this->getFormData()->getEncryptionKey() ?>" title="<?= $this->__('Encryption Key') ?>" class="input-text">
-            <p style="margin-top:4px; line-height:1.3em; color:#666;">
-                <small><?= $this->__('Maho uses this key to encrypt passwords, credit cards and more. If this field is left empty the system will create an encryption key for you and will display it on the next page.') ?></small>
-            </p>
-        </li>
-    </ul>
-</fieldset>
-<div class="button-set">
+            </li>
+        </ul>
+    </section>
     <p class="required">* <?= $this->__('Required Fields') ?></p>
     <button class="form-button" type="submit"><?= $this->__('Continue') ?></button>
-</div>
 </form>
-<script>
-    var dataForm = new VarienForm('form-validate');
-</script>

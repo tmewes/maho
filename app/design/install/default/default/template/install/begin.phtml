@@ -12,13 +12,8 @@
  * @copyright   Copyright (c) 2020-2022 The OpenMage Contributors (https://www.openmage.org)
  * @license     https://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
-/**
- * Installation start page
- *
- * @var Mage_Install_Block_Begin $this
- */
 ?>
+<?php /** @var Mage_Install_Block_Begin $this */ ?>
 <h1><?= $this->__("Welcome to Maho's Installation Wizard!") ?></h1>
 <?= $this->getMessagesBlock()->toHtml() ?>
 <form action="<?= $this->getPostUrl() ?>" method="post">

@@ -12,46 +12,39 @@
  * @copyright   Copyright (c) 2022 The OpenMage Contributors (https://www.openmage.org)
  * @license     https://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
-/**
- * Install localization template
- *
- * @var Mage_Install_Block_Locale $this
- */
 ?>
+<?php /** @var Mage_Install_Block_Locale $this */ ?>
 <h1><?= $this->__('Localization') ?></h1>
 <?= $this->getMessagesBlock()->toHtml() ?>
 
 <form action="<?= $this->getPostUrl() ?>" method="get" id="form-validate">
-<fieldset class="group-select">
- <legend><?= $this->__('Locale') ?></legend>
-    <h4 class="legend"><?= $this->__('Locale settings') ?></h4>
-    <ul>
-        <li>
-            <div class="input-box">
-                <label for="locale"><?= $this->__('Locale') ?> <span class="required">*</span></label><br>
-                <?= $this->getLocaleSelect() ?>
-            </div>
-        </li>
-        <li>
-            <div class="input-box">
-                <label for="timezone"><?= $this->__('Time Zone') ?> <span class="required">*</span></label><br>
-                <?= $this->getTimezoneSelect() ?>
-            </div>
-            <div class="input-box">
-                <label for="currency"><?= $this->__('Default Currency') ?> <span class="required">*</span></label><br>
-                <?= $this->getCurrencySelect() ?>
-            </div>
-        </li>
-    </ul>
-</fieldset>
-<div class="button-set">
+    <section>
+        <h4 class="legend"><?= $this->__('Locale settings') ?></h4>
+        <ul>
+            <li>
+                <div class="input-box">
+                    <label for="locale"><?= $this->__('Locale') ?> <span class="required">*</span></label><br>
+                    <?= $this->getLocaleSelect() ?>
+                </div>
+            </li>
+            <li>
+                <div class="input-box">
+                    <label for="timezone"><?= $this->__('Time Zone') ?> <span class="required">*</span></label><br>
+                    <?= $this->getTimezoneSelect() ?>
+                </div>
+                <div class="input-box">
+                    <label for="currency"><?= $this->__('Default Currency') ?> <span
+                                class="required">*</span></label><br>
+                    <?= $this->getCurrencySelect() ?>
+                </div>
+            </li>
+        </ul>
+    </section>
     <p class="required">* <?= $this->__('Required Fields') ?></p>
     <button class="form-button" type="submit"><?= $this->__('Continue') ?></button>
-</div>
 </form>
 <script>
-    function changeLocale(event){
+    function changeLocale(event) {
         window.location =
             '<?= $this->getChangeUrl() ?>'
             + 'locale/'
@@ -61,5 +54,6 @@
             + '&amp;currency='
             + document.querySelector('#currency').value;
     }
+
     document.querySelector('#locale').addEventListener('change', changeLocale);
 </script>
