@@ -3461,11 +3461,6 @@ parameters:
 			path: app/code/core/Mage/Payment/Model/Method/Abstract.php
 
 		-
-			message: "#^Loose comparison using \\!\\= between ''\\|'OT' and 'SS' will always evaluate to true\\.$#"
-			count: 1
-			path: app/code/core/Mage/Payment/Model/Method/Cc.php
-
-		-
 			message: "#^Method Mage_Payment_Model_Recurring_Profile\\:\\:exportStartDatetime\\(\\) should return string\\|Zend_Date but empty return statement found\\.$#"
 			count: 1
 			path: app/code/core/Mage/Payment/Model/Recurring/Profile.php
@@ -4864,11 +4859,6 @@ parameters:
 			message: "#^Method Mage_Wishlist_IndexController\\:\\:downloadCustomOptionAction\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 3
 			path: app/code/core/Mage/Wishlist/controllers/IndexController.php
-
-		-
-			message: "#^Variable \\$cronMode might not be defined\\.$#"
-			count: 1
-			path: cron.php
 
 		-
 			message: "#^Comparison operation \"\\>\\=\" between int\\<0, max\\> and 0 is always true\\.$#"

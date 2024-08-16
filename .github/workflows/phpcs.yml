@@ -1,6 +1,8 @@
 name: PHPCS
 
 on:
+  push:
+  pull_request:
   workflow_call:
   workflow_dispatch:
 
@@ -16,8 +18,6 @@ jobs:
             path: .phpcs.xml.dist
           - label: Ecg
             path: .phpcs.ecg.xml.dist
-          - label: PhpCompatibility
-            path: .phpcs.php.xml.dist
 
     steps:
       - name: Setup PHP

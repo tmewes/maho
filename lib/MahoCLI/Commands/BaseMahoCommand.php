@@ -1,6 +1,6 @@
 <?php
 
-namespace Maho\Commands;
+namespace MahoCLI\Commands;
 
 use Mage;
 use Symfony\Component\Console\Command\Command;
@@ -25,7 +25,7 @@ class BaseMahoCommand extends Command
     public function humanReadableSize(int $bytes): string
     {
         if ($bytes <= 0) {
-            return 0;
+            return '0';
         }
 
         $i = floor(log($bytes, 1024));

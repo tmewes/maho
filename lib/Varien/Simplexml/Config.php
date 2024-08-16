@@ -422,6 +422,8 @@ class Varien_Simplexml_Config
      */
     public function loadFile($filePath)
     {
+        $filePath = mahoFindFileInIncludePath($filePath);
+
         if (!is_readable($filePath)) {
             //throw new Exception('Can not read xml file '.$filePath);
             return false;
