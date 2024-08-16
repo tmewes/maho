@@ -13,9 +13,7 @@
  */
 
 body {
-    color: #2f2f2f;
     font: 12px/1.5 arial, helvetica, sans-serif;
-    text-align: center;
     margin: 0;
 }
 
@@ -33,13 +31,14 @@ ul {
 }
 
 li.active {
-    color: green;
+    color: #858a11;
     font-weight: bold;
 }
 
-label {
+label.checkbox {
     color: #666;
     font-weight: bold;
+    cursor: pointer;
 }
 
 button {
@@ -58,6 +57,12 @@ button:hover {
     background-color: #858a11;
     border: 2px solid #858a11;
     cursor: pointer;
+}
+
+button[disabled] {
+    background: #ccc;
+    border: 2px solid #ccc;
+    cursor: not-allowed;
 }
 
 .required {
@@ -102,7 +107,6 @@ main {
     min-height: 400px;
     width: 900px;
     margin: 0 auto;
-    text-align: left;
     position: relative;
 }
 
@@ -122,4 +126,5 @@ footer {
     padding: 1em 1em 4em 1em;
     position: relative;
     clear: both;
+    text-align: center;
 }
