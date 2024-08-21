@@ -30,15 +30,11 @@
     <a id="logo" href="/">
         <img src="<?= $this->getSkinUrl('images/logo.svg') ?>" alt="<?= $this->__('Maho') ?>">
     </a>
+    <?= $this->getChildHtml('left') ?>
 </header>
 <main>
-    <aside>
-        <?= $this->getChildHtml('left') ?>
-    </aside>
-    <article>
-        <?= $this->getChildHtml('global_messages') ?>
-        <?= $this->getChildHtml('content') ?>
-    </article>
+    <?= $this->getChildHtml('global_messages') ?>
+    <?= $this->getChildHtml('content') ?>
 </main>
 <footer>
     <?= $this->__('Help Us to Keep Maho Healthy') ?> -

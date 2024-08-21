@@ -14,14 +14,16 @@
  */
 ?>
 <?php /** @var Mage_Install_Block_State $this */ ?>
-<h2><?= $this->__('Installation') ?></h2>
-<ul>
-    <?php foreach ($steps as $step): ?>
-        <li <?php if ($step->getActive()): ?>class="active"<?php endif ?>><?= $this->__($step->getCode()) ?></li>
-    <?php endforeach ?>
-</ul>
-<p>
-    <?= $this->__('Having trouble installing Maho?') ?>
-    <?= $this->__('Check out our') ?>
-    <a href="https://mahocommerce.com/getting-started" target="_blank"><?= $this->__('Installation Guide') ?></a>
-</p>
+
+<div class="container">
+    <div class="steps">
+        <span class="circle active"><img src="<?= $this->getSkinUrl('images/file-signature-solid.svg') ?>" alt="Test" title="Test"></span>
+        <span class="circle"><img src="<?= $this->getSkinUrl('images/location-dot-solid.svg') ?>" alt="Test"></span>
+        <span class="circle"><img src="<?= $this->getSkinUrl('images/gear-solid.svg') ?>" alt="Test"></span>
+        <span class="circle"><img src="<?= $this->getSkinUrl('images/user-solid.svg') ?>" alt="Test"></span>
+        <span class="circle"><img src="<?= $this->getSkinUrl('images/flag-checkered-solid.svg') ?>" alt="Test"></span>
+        <div class="progress-bar">
+            <span class="indicator"></span>
+        </div>
+    </div>
+</div>
