@@ -125,12 +125,10 @@ footer {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+    float: right;
     max-width: 400px;
     width: 100%;
+
 }
 .container .steps {
     display: flex;
@@ -157,11 +155,11 @@ footer {
 .steps .circle img {
     max-width: 45%;
     max-height: 45%;
-    filter: invert(43%) sepia(100%) saturate(357%) hue-rotate(23deg) brightness(96%) contrast(96%);
+    filter: invert(54%) sepia(96%) saturate(365%) hue-rotate(24deg) brightness(104%) contrast(92%);
 }
 .steps .circle.active {
     transition-delay: 100ms;
-    border-color: #adb41a;
+    border-color: #d7df22;
 }
 .steps .progress-bar {
     position: absolute;
