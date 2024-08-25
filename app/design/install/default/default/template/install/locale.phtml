@@ -19,22 +19,20 @@
 
 <form action="<?= $this->getPostUrl() ?>" method="get" id="form-validate">
     <section>
-        <h4><?= $this->__('Locale settings') ?></h4>
         <ul>
             <li>
                 <div class="input-box">
-                    <label for="locale"><?= $this->__('Locale') ?> <span class="required">*</span></label><br>
+                    <label for="locale"><?= $this->__('Locale') ?> <span class="required">*</span></label>
                     <?= $this->getLocaleSelect() ?>
                 </div>
             </li>
             <li>
                 <div class="input-box">
-                    <label for="timezone"><?= $this->__('Time Zone') ?> <span class="required">*</span></label><br>
+                    <label for="timezone"><?= $this->__('Time Zone') ?> <span class="required">*</span></label>
                     <?= $this->getTimezoneSelect() ?>
                 </div>
                 <div class="input-box">
-                    <label for="currency"><?= $this->__('Default Currency') ?> <span
-                                class="required">*</span></label><br>
+                    <label for="currency"><?= $this->__('Default Currency') ?> <span class="required">*</span></label>
                     <?= $this->getCurrencySelect() ?>
                 </div>
             </li>

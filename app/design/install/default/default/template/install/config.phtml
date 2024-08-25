@@ -27,7 +27,6 @@
                     <label for="base_url"><?= $this->__('Base URL') ?> <span class="required">*</span></label><br>
                     <input type="text" name="config[unsecure_base_url]" id="base_url"
                            value="<?= $this->getFormData()->getUnsecureBaseUrl() ?>"
-                           title="<?= Mage::helper('core')->quoteEscape($this->__('Base URL')) ?>"
                            class="required-entry validate-url">
                 </li>
                 <li>
@@ -35,7 +34,6 @@
                                 class="required">*</span></label><br>
                     <input type="text" name="config[admin_frontname]" id="admin_frontname"
                            value="<?= $this->getFormData()->getAdminFrontname() ?>"
-                           title="<?= $this->__('Admin Path') ?>"
                            class="required-entry validate-data">
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
                         <small><?= $this->__('Additional path added after Base URL to access your Administrative Panel (e.g. admin, backend, control etc.).') ?></small>
@@ -58,10 +56,9 @@
                                 class="required">*</span></label><br/>
                     <input type="text" name="config[secure_base_url]" id="secure_base_url"
                            value="<?= $this->getFormData()->getSecureBaseUrl() ?>"
-                           title="<?= Mage::helper('core')->quoteEscape($this->__('Secure Base URL')) ?>"
                            class="required-entry validate-url">
                     <p style="margin-top:4px; line-height:1.3em; color:#666;">
-                        <small><?= $this->__('Provide a complete base URL for SSL connection. For example: %s', '<strong>https://www.mydomain.com/maho/</strong>') ?></small>
+                        <?= $this->__('Provide a complete base URL for SSL connection. For example: %s', '<strong>https://www.mydomain.com/maho/</strong>') ?>
                     </p>
                 </li>
                 <li>
