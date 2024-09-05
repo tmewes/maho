@@ -473,7 +473,7 @@ class Mage_Catalog_Helper_Product extends Mage_Core_Helper_Url
     }
 
     /**
-     * Set flag that shows if Magento has to check product to be saleable (enabled and/or inStock)
+     * Set flag that shows if Magento has to check product to be salable (enabled and/or inStock)
      *
      * For instance, during order creation in the backend admin has ability to add any products to order
      *
@@ -487,7 +487,7 @@ class Mage_Catalog_Helper_Product extends Mage_Core_Helper_Url
     }
 
     /**
-     * Get flag that shows if Magento has to check product to be saleable (enabled and/or inStock)
+     * Get flag that shows if Magento has to check product to be salable (enabled and/or inStock)
      *
      * @return bool
      */
@@ -512,7 +512,7 @@ class Mage_Catalog_Helper_Product extends Mage_Core_Helper_Url
     }
 
     /**
-     * Get default qty - either as preconfigured, or as 1.
+     * Get default qty - either as preconfigured or as 1.
      * Also restricts it by minimal qty.
      *
      * @param Mage_Catalog_Model_Product $product

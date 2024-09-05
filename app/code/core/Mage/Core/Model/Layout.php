@@ -389,7 +389,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
                  * e.g. info.title means that Magento needs to translate value of <title> node
                  * that is a child of <info> node
                  */
-                // @var $argumentHierarhy array - path to translatable item in $args array
+                // @var $argumentHierarchy array - path to translatable item in $args array
                 $argumentHierarchy = explode('.', $translatableArgumentName);
                 $argumentStack = &$args;
                 $canTranslate = true;
